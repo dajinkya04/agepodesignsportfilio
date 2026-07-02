@@ -158,22 +158,38 @@ if (detail.topSection?.section4?.scrollText?.length) {
 }
     /* GALLERY */
 
- const galleryTitle = detail.middleSection?.title || "";
+//  const galleryTitle = detail.middleSection?.title || "";
 
-const words = galleryTitle.split(" ");
+// const words = galleryTitle.split(" ");
 
-const lastTwoWords = words.splice(-2).join(" ");
+// const lastTwoWords = words.splice(-2).join(" ");
 
-document.getElementById("galleryTitle").innerHTML = `
+// document.getElementById("galleryTitle").innerHTML = `
 
-  ${words.join(" ")}
+//   ${words.join(" ")}
 
-  <span>
-    ${lastTwoWords}
-  </span>
+//   <span>
+//     ${lastTwoWords}
+//   </span>
 
-`;
+// `;
 
+
+const galleryTitle = detail.middleSection?.title || "";
+
+const words = galleryTitle.trim().split(/\s+/);
+
+if (words.length >= 2) {
+    const lastTwoWords = words.splice(-2).join("&nbsp;");
+
+    document.getElementById("galleryTitle").innerHTML = `
+        ${words.join(" ")}
+        <br>
+        <span class="gradient-text">${lastTwoWords}</span>
+    `;
+} else {
+    document.getElementById("galleryTitle").textContent = galleryTitle;
+}
     const galleryGrid = document.getElementById("galleryGrid");
 
     const images = detail.middleSection?.images || [];

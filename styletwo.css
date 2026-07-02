@@ -146,7 +146,7 @@ a {
 
 .agep-home-slider {
   width: 100%;
-  margin: 80px 0;
+  margin: 20px 0;
   position: relative;
   overflow-x: auto;
   overflow-y: hidden;
@@ -1478,15 +1478,81 @@ hr {
    TOP SECTION
 ====================================================== */
 
-.agep-project-top {
+.agep-top-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+/* Back Button */
+
+.agep-back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+  border: 1.5px solid transparent;
+
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(90deg, #ff0066, #fb7700) border-box;
+
+  color: #ff2b72;
+  text-decoration: none;
+  transition: 0.3s ease;
+  flex-shrink: 0;
+  margin-bottom: 12px;
+}
+
+.agep-back-btn span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1;
+  transform: translateY(-1px);
+}
+
+.agep-back-btn:hover {
+  background: linear-gradient(90deg, #ff0066, #fb7700);
+  color: #fff;
+  transform: translateX(-3px);
+}
+
+/* Badge */
+
+.agep-project-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 999px;
+
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+
+  background: linear-gradient(90deg, #ff0066, #fb7700);
+}
+
+/* .agep-project-top {
   max-width: 1100px;
 
   margin-bottom: 55px;
-}
+} */
 
 /* BADGE */
 
-.agep-project-badge {
+/* .agep-project-badge {
   display: inline-flex;
 
   align-items: center;
@@ -1510,7 +1576,7 @@ hr {
   background: linear-gradient(90deg, #ff0066, #fb7700);
 
   margin-bottom: 22px;
-}
+} */
 
 /* TITLE */
 
@@ -1539,21 +1605,20 @@ hr {
 }
 
 /* DESCRIPTION */
-
 .agep-project-about {
-  width: 1200px;
-
+  max-widht: 100%;
+  width: 100%;
   font-family: "Poppins", sans-serif;
-
   font-size: 1.25rem;
-
-  line-height: 1.4;
-
+  line-height: 1.5;
   font-weight: 400;
-
-  color: #222222;
+  color: #222;
 
   margin: 0;
+
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 /* ======================================================
@@ -1561,7 +1626,7 @@ hr {
 ====================================================== */
 
 .agep-showcase {
-  margin-bottom: 80px;
+  margin-bottom: 43px;
 
   background: #f5f5f5;
 
@@ -1687,7 +1752,12 @@ hr {
 /* DESCRIPTION */
 
 .agep-middle-section p {
-  max-width: 1400px;
+  width: 100%;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
+  text-wrap: pretty;
 
   font-family: "Poppins", sans-serif;
 
@@ -1697,9 +1767,9 @@ hr {
 
   line-height: 140%;
 
-  letter-spacing: -2%;
+  letter-spacing: 1%;
 
-  color: #000000;
+  color: #222222;
 
   margin: 0;
 }
@@ -1846,8 +1916,7 @@ hr {
 /* TITLE */
 
 .agep-gallery-section h2 {
-  max-width: 614px;
-
+  width: min(900px, 100%);
   font-family: "Poppins", sans-serif;
 
   font-weight: 500;
@@ -1865,7 +1934,14 @@ hr {
   margin-bottom: 47px;
 }
 
-/* LAST WORD GRADIENT */
+#galleryTitle {
+  text-wrap: balance;
+}
+
+#galleryTitle .gradient-text {
+  display: inline-block;
+  white-space: nowrap;
+}
 
 .agep-gallery-section h2 span {
   background: linear-gradient(90deg, #ff0066, #fb7700);
@@ -1875,7 +1951,7 @@ hr {
   -webkit-text-fill-color: transparent;
 }
 
-/* GRID */
+/*Image Gallery GRID */
 
 .agep-gallery-grid {
   display: grid;
@@ -1901,10 +1977,11 @@ hr {
   object-fit: cover;
 
   transition: 0.4s ease;
+  transform-origin: center center;
 }
 
 .agep-gallery-item:hover img {
-  transform: scale(1.04);
+  transform: scale(1.01);
 }
 
 /* ======================================================
@@ -1912,13 +1989,13 @@ hr {
 ====================================================== */
 
 .agep-final-section {
-  margin-bottom: 28px;
+  margin-bottom: 50px;
 }
 
 .agep-final-section img {
   width: 100%;
 
-  margin-bottom: 52px;
+  margin-bottom: 35px;
 }
 
 .agep-final-section h4 {
@@ -1946,13 +2023,13 @@ hr {
 
   line-height: 140%;
 
-  color: #000000;
+  color: #222222;
 }
 
 /* ======================================================
    BACK BUTTON
 ====================================================== */
-
+/* 
 .agep-back-btn-wrap {
   margin-bottom: 30px;
 }
@@ -1986,21 +2063,21 @@ hr {
   font-size: 26px;
   font-weight: 700;
   line-height: 1;
-  transform: translateY(-1px); /* Adjust to -2px or 0 if needed */
+  transform: translateY(-1px); 
 }
 
 .agep-back-btn:hover {
   background: linear-gradient(90deg, #ff0066, #fb7700);
   color: #fff;
   transform: translateX(-2px);
-}
+} */
 
 /* ======================================================
    RELATED TOP
 ====================================================== */
 
 .agep-related-projects {
-  margin-top: 47px;
+  margin-top: 40px;
 }
 
 .agep-related-projects-top {
@@ -3701,8 +3778,8 @@ hr {
   }
 
   .agep-back-btn {
-    width: 46px;
-    height: 46px;
+    width: 40px;
+    height: 40px;
     font-size: 22px;
   }
 
@@ -3929,6 +4006,13 @@ hr {
     white-space: nowrap;
     font-size: 18px;
     animation: type 4.5s infinite;
+  }
+
+  .section-wrap--md .btn-lg,
+  .btn-lg.btn-button {
+    font-size: 11px;
+    padding: 0 20px;
+    line-height: 26px;
   }
 }
 /* medium and up screens */
@@ -4653,7 +4737,7 @@ hr {
   }
 
   .section-wrap--md .call-to-action__title {
-    font-size: 28px;
+    font-size: 20px;
   }
 }
 
@@ -4842,8 +4926,8 @@ hr {
     display: contents;
   }
   .agep-back-btn {
-    width: 46px;
-    height: 46px;
+    width: 40px;
+    height: 40px;
     font-size: 22px;
   }
   /* Landing page slider  */
@@ -4945,10 +5029,6 @@ hr {
   .section-wrap {
     padding: 3px;
   }
-
-  .section-wrap--md .call-to-action__title {
-    font-size: 28px;
-  }
 }
 
 @media only screen and (max-width: 447px) {
@@ -5017,11 +5097,6 @@ hr {
   .section-wrap {
     padding: 3px;
   }
-
-  .section-wrap--md .call-to-action__title {
-    font-size: 28px;
-  }
-
   .loader {
     width: 59%;
     margin-left: 22%;
@@ -5141,9 +5216,6 @@ hr {
     padding: 3px;
   }
 
-  .section-wrap--md .call-to-action__title {
-    font-size: 28px;
-  }
   .loader {
     width: 47%;
     margin-left: 27%;
@@ -5365,7 +5437,7 @@ hr {
   }
 
   .section-wrap--md .call-to-action__title {
-    font-size: 28px;
+    font-size: 20px;
   }
   .loader {
     width: 48%;
@@ -5493,10 +5565,6 @@ hr {
   .section-wrap {
     padding: 3px;
   }
-
-  .section-wrap--md .call-to-action__title {
-    font-size: 28px;
-  }
 }
 
 @media only screen and (max-width: 326px) {
@@ -5578,7 +5646,7 @@ hr {
   }
 
   .section-wrap--md .call-to-action__title {
-    font-size: 28px;
+    font-size: 20px;
   }
 }
 
@@ -5658,10 +5726,6 @@ hr {
 
   .section-wrap {
     padding: 3px;
-  }
-
-  .section-wrap--md .call-to-action__title {
-    font-size: 28px;
   }
   .loader {
     width: 54%;
@@ -5750,9 +5814,6 @@ hr {
     padding: 3px;
   }
 
-  .section-wrap--md .call-to-action__title {
-    font-size: 28px;
-  }
   .loader {
     width: 78%;
     margin-left: 17%;
